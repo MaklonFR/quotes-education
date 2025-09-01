@@ -1,8 +1,26 @@
+@keyframes cardIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-cardIn {
+  animation: cardIn 0.7s cubic-bezier(0.4,0,0.2,1);
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Optional custom styles */
-body {
-  @apply bg-gray-50 text-gray-800;
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-800;
+  }
+  body.dark {
+    @apply bg-gray-900 text-gray-100;
+  }
 }
